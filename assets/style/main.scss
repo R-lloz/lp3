@@ -1,0 +1,1226 @@
+// /* scss: 変数設定 */
+// カンプ / コンテンツ幅の指定
+$sp-full-width: 390;        // スマホ用のカンプ幅
+$pc-full-width: 1440;       // PC用のカンプ幅
+$pc-content-width: 1030;    // PC用のカンプのコンテンツ幅(ガイド線の幅)
+
+// ブレークポイント設定
+$breakpoint-md: 768;
+$breakpoint-lg: $pc-content-width;
+
+// /* scss: ブレークポイント関数 */
+$breakpoints: (
+    "md": "screen and (min-width: #{$breakpoint-md}px)",
+    "lg": "screen and (min-width: #{$breakpoint-lg}px)",
+) !default;
+
+@mixin mq($breakpoint: md) {
+    @media #{map-get($breakpoints, $breakpoint)} {
+        @content;
+    }
+}
+
+/* 共通スタイル */
+html {
+	font-size: calc(10 * 100vw / $sp-full-width);
+    scroll-behavior: smooth;
+
+    @include mq() {
+        font-size: calc(10 * 100vw / $pc-content-width);
+    }
+
+    @include mq(lg) {
+        font-size: 62.5%;
+    }
+}
+
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #333;
+    line-height: 1.5;
+    padding-top: 6rem;
+    @include mq() {
+        padding-top: 9.2rem;
+    }
+}
+
+a:hover {
+    opacity: .7;
+}
+
+.link-button {
+    color: #fff;
+    font-size: 1.2rem;
+    border-radius: 2rem;
+    text-decoration: none;
+    padding: .6rem 1rem .6rem 1.1rem;
+    letter-spacing: .03rem;
+
+    @include mq() {
+        padding: .9rem 1.8rem .9rem 2rem;
+        font-size: 2.112rem;
+        border-radius: 3rem;
+        letter-spacing: 0;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 1rem;
+        width: .6rem;
+        background-image: url('/assets/image/icon_arrow.svg');
+        background-size: contain;
+        margin-left: .7rem;
+
+        @include mq() {
+            height: 1.8rem;
+            width: 1.1rem;
+        }
+    }
+
+    &__text--small {
+        font-size: 1rem;
+        padding-left: .2rem;
+        letter-spacing: 0;
+
+        @include mq() {
+            font-size: 1.787rem;
+        }
+    }
+
+    &--pink {
+        background-color: #fa7da3;
+        &:hover {
+            background-color: #ff94b8;
+            opacity: 1;
+        }
+        @include mq() {
+            padding-left: 2.7rem;
+        }
+    }
+
+    &--green {
+        background-color: #49c43d;
+
+        &:hover {
+            background-color: #40e02f;
+            opacity: 1;
+        }
+    }
+
+    &--large {
+        font-size: 2.1rem;
+        font-weight: 700;
+        width: 35rem;
+        text-align: center;
+        position: relative;
+        border-radius: 5rem;
+        letter-spacing: .2rem;
+        line-height: 1.35;
+        padding: 1.1rem .1rem 1.2rem 0;
+
+        @include mq() {
+            font-size: 3.4rem;
+            width: 57.058rem;
+            border-radius: 6rem;
+            padding: 1.7rem 1rem 2rem 1rem;
+            letter-spacing: .3rem;
+        }
+
+        &::after {
+            height: 1.9rem;
+            width: 1.2rem;
+            margin-left: 3.1rem;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 3.2rem;
+
+            @include mq() {
+                height: 3.2rem;
+                width: 2rem;
+                margin-left: 5.2rem;
+                right: 4.9rem;
+            }
+        }
+    }
+}
+
+.section-title {
+    font-size: 3.2rem;
+    color: #fa7da3;
+    font-weight: 700;
+    display: block;
+    margin-top: .6rem;
+    letter-spacing: .1rem;
+    margin-right: .3rem;
+
+    @include mq() {
+        font-size: 4.2rem;
+        margin-top: .9rem;
+        letter-spacing: 0;
+        margin-right: 0;
+    }
+
+    &::before,
+    &::after {
+        content: "";
+        display: inline-block;
+        height: 4.6rem;
+        width: 3.731rem;
+        background-size: contain;
+        vertical-align: text-bottom;
+
+        @include mq() {
+            height: 6.109rem;
+            width: 4.959rem;
+            margin-top: .3rem;
+        }
+    }
+
+    &::before {
+        background-image: url('/assets/image/icon_star_left.svg');
+        margin-right: .1rem;
+        @include mq() {
+            margin-right: .9rem;
+        }
+    }
+    &::after {
+        background-image: url('/assets/image/icon_star_right.svg');
+        @include mq() {
+            margin-left: .4rem;
+        }
+    }
+
+    &--course {
+        margin-top: .5rem;
+
+        &::before {
+            margin-right: .7rem;
+            margin-left: .5rem;
+
+            @include mq() {
+                margin-right: 1.5rem;
+                margin-left: .5rem;
+            }
+        }
+
+        &::after {
+            margin-right: .8rem;
+            margin-left: .4rem;
+
+            @include mq() {
+                margin-right: .8rem;
+                margin-left: .9rem;
+            }
+        }
+    }
+
+    &--voices {
+
+        &::before {
+            margin-right: 1.6rem;
+
+            @include mq() {
+                margin-right: 2.2rem;
+            }
+        }
+
+        &::after {
+            margin-left: 1.3rem;
+            @include mq() {
+                margin-left: 2.4rem;
+            }
+        }
+    }
+
+}
+
+/* ヘッダー */
+.header {
+    height: 6rem;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+
+    @include mq() {
+        height: 9.2rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem .9rem .7rem 1.2rem;
+
+        @include mq() {
+            max-width: 103rem;
+            padding: 1.8rem .2rem 2rem .3rem;
+        }
+    }
+
+    &__logo {
+        width: 7.2rem;
+        height: 4.1rem;
+
+        @include mq() {
+            width: 9.7rem;
+            height: 5.4rem;
+        }
+    }
+
+    &__link-list {
+        display: flex;
+        column-gap: 1rem;
+        list-style: none;
+        padding-bottom: .6rem;
+
+        @include mq() {
+            column-gap: 2.1rem;
+            padding-bottom: .4rem;
+        }
+    }
+}
+
+/* メイン */
+/* カバー */
+.cover {
+    height: 31.4rem;
+    background-color: #fa7da3;
+
+    @include mq() {
+        height: 61.2rem;
+    }
+
+    &__container {
+        display: flex;
+        height: 100%;
+        align-items: end;
+        flex-direction: column;
+        position: relative;
+        margin: 0 0 0 .4rem;
+        background-image: url('/assets/image/img_cover_sp.png');
+        background-position: bottom left;
+        background-size: auto 21.3rem;
+        background-repeat: no-repeat;
+
+        @include mq() {
+            max-width: 103rem;
+            margin: 0 auto;
+            background-image: url('/assets/image/img_cover_pc.png');
+            background-size: auto 50.4rem;
+        }
+    }
+
+    &__title {
+        width: 18.8rem;
+        display: flex;
+        background-color: rgb(255, 255, 255, .3);
+        color: #fff;
+        padding: 1rem 2rem 2rem 2.7rem;
+        font-size: 2.4rem;
+        line-height: 1;
+        font-weight: 700;
+        box-shadow: 3px 3px 5px rgba(0, 0, 0, .3);
+
+        @include mq() {
+            width: 42.3rem;
+            padding: 1.1rem 2rem 3.9rem 5.8rem;
+            font-size: 5.4rem;
+            margin-right: 2.9rem;
+        }
+
+        &_image {
+            position: absolute;
+            height: 6.7rem;
+            width: 16.6rem;
+            top: 2.2rem;
+            left: 1.5rem;
+
+            @include mq() {
+                height: 20.2rem;
+                width: 54.1rem;
+                top: 0;
+                left: 1.9rem;
+            }
+        }
+
+        &--left {
+            margin-top: 1.5rem;
+            margin-right: 1rem;
+            @include mq() {
+                margin-top: 3rem;
+                margin-right: 2.3rem;
+            }
+        }
+
+        &--bg_white {
+            display: block;
+            background-color: #fff;
+            padding: .5rem .4rem .5rem .3rem;
+            color: #fa7da3;
+            font-size: 1.3rem;
+            font-weight: 700;
+            line-height: 1;
+            margin-bottom: .8rem;
+            width: fit-content;
+
+            @include mq() {
+                padding: .8rem;
+                font-size: 2.925rem;
+                margin-bottom: 2rem;
+                padding-bottom: 1.4rem;
+                margin-top: .3rem;
+            }
+        }
+
+        &--right {
+            color: #fffd7a;
+            font-size: 3.6rem;
+
+            @include mq() {
+                font-size: 8.1rem;
+            }
+        }
+
+        &--strong {
+            font-size: 7.6rem;
+
+            @include mq() {
+                font-size: 17.1rem;
+            }
+        }
+    }
+
+    &__price {
+        font-family: 'outfit', sans-serif;
+        font-size: 1.4rem;
+        color: #fff;
+        padding-right: 2.5rem;
+        margin-top: .6rem;
+        text-align: right;
+
+        @include mq() {
+            font-size: 2.648rem;
+            padding-right: 9.3rem;
+            margin-top: .4rem;
+        }
+
+        &--small {
+            font-size: .9rem;
+
+            @include mq() {
+                font-size: 1.702rem;
+            }
+        }
+    }
+
+    &__info_list {
+        margin-top: 2.1rem;
+        margin-right: 2.6rem;
+
+        @include mq() {
+            margin-top: 4.5rem;
+            margin-right: 2.9rem;
+        }
+    }
+
+    &__info_item {
+        width: 13.3rem;
+        height: 3.5rem;
+        font-size: 1.8rem;
+        text-align: center;
+        border: 1px solid #fff;
+        margin-bottom: 1.2rem;
+        list-style: none;
+        color: #fff;
+        align-content: center;
+        padding-bottom: .3rem;
+
+        @include mq() {
+            width: 42.3rem;
+            height: 6.9rem;
+            font-size: 2.8rem;
+            margin-bottom: 2rem;  
+        }
+    }
+}
+
+/* キャンペーン */
+.campaign-offer {
+    background-color: #fffedd;
+    padding: 1.8rem 0;
+
+    @include mq() {
+        padding: 3.5rem 0 2.6rem 0;
+    }
+
+    &__container {
+        margin: 0 auto;
+        justify-items: center;
+        text-align: center;
+
+        @include mq() {
+            max-width: 103rem;
+        }
+    }
+
+    &__title {
+        font-size: 2.1rem;
+        color: #fa7da3;
+        position: relative;
+        width: fit-content;
+
+        @include mq() {
+            font-size: 3.7rem;
+            letter-spacing: .2rem;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            top: 56%;
+            width: 2.8rem;
+            height: .2rem;
+            background-color: #fa7da3;
+            @include mq() {
+                width: 4.5rem;
+                height: .3rem;
+            }
+        }
+
+        &::before {
+            left: -2.8rem;
+            transform: rotate(60deg);
+            @include mq() {
+                left: -3.9rem;
+            }
+        }
+
+        &::after {
+            right: -3rem;
+            transform: rotate(-60deg);
+            @include mq() {
+                right: -4.3rem;
+            }
+        }
+    }
+
+    &__content {
+        &--top {
+            width: 35rem;
+            background-color: #fa7da3;
+            color: #fff;
+            font-size: 2.1rem;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            margin-top: 1.1rem;
+            line-height: 1.4;
+            padding-bottom: .2rem;
+
+            @include mq() {
+                width: 55rem;
+                font-size: 3.2rem;
+                margin-top: 1.4rem;
+            }
+        }
+
+        &--bottom {
+            width: 35rem;
+            background-color: #fff;
+            color: #fa7da3;
+            font-size: 2.7rem;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            border: 1px solid #fa7da3;
+            padding: .7rem 0 1.1rem 1.2rem;
+            line-height: 1;
+
+            @include mq() {
+                width: 55rem;
+                padding: 1.3rem 0 2.1rem 2.1rem;
+                font-size: 4.367rem;
+            }
+        }
+
+        &--strong {
+            font-size: 4.2rem;
+            font-weight: 600;
+
+            @include mq() {
+                font-size: 6.793rem;
+            }
+        }
+    }
+
+    &__description {
+        font-size: 1rem;
+        margin-top: .7rem;
+
+        @include mq() {
+            font-size: 1.4rem;
+            margin-top: 1.4rem;
+        }
+    }
+
+}
+
+/* 申し込み */
+.apply {
+    padding: 1rem 0 3.4rem 0;
+    @include mq() {
+        padding: 5.2rem 0 5.4rem 0;
+    }
+
+    &--second {
+        padding-top: 2.4rem;
+
+        @include mq() {
+            padding-top: 5.1rem;
+        }
+    }
+
+    &--third {
+        padding-top: 2.5rem;
+        padding-bottom: 4.2rem;
+
+        @include mq() {
+            padding-top: 5.1rem;
+            padding-bottom: 6.6rem;
+        }
+    }
+
+    &__container {
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        @include mq() {
+            max-width: 103rem;
+        }
+    }
+
+    &__text {
+        font-size: 2.1rem;
+        text-align: center;
+        margin-bottom: .9rem;
+        color: #fa7da3;
+        font-weight: 600;
+        letter-spacing: .2rem;
+        padding-left: .8rem;
+
+        @include mq() {
+            font-size: 3.4rem;
+            margin-bottom: 1.3rem;
+            letter-spacing: .3rem;
+        }
+    }
+}
+
+.trial {
+    margin-top: 3rem;
+
+    @include mq() {
+        margin-top: 2.4rem;
+    }
+
+    &__title {
+        color: #50bfff;
+        text-align: center;
+        font-size: 1.7rem;
+        font-weight: 600;
+        width: 35rem;
+        border-top: 1px solid #50bfff;
+        border-bottom: 1px solid #50bfff;
+        padding: .6rem 0 .7rem;
+        letter-spacing: .2rem;
+
+        @include mq() {
+            font-size: 2.8rem;
+            width: 57.1rem;
+            padding: 1.6rem 0;
+            margin-top: 2.4rem;
+            padding: 1rem 0;
+        }
+    }
+
+    &__contents {
+        padding-left: .1rem;
+        margin-top: 1.1rem;
+
+        @include mq() {
+            padding-left: 0;
+            margin-top: 1.9rem;
+        }
+    }
+
+    &__content {
+        font-size: 1.4rem;
+        margin-bottom: .3rem;
+
+        @include mq() {
+            font-size: 2.284rem;
+            letter-spacing: -.02rem;
+        }
+
+        &--small {
+            font-size: 1.1rem;
+
+            @include mq() {
+                font-size: 1.796rem;
+            }
+        }
+    }
+
+}
+
+/* 紹介 */
+.feature-points {
+    padding: 3.3rem 0 3rem 0;
+    background-color: #fdf0f5;
+
+    @include mq() {
+        padding: 4.9rem 0 6.1rem 0;
+    }
+
+    &__container {
+        margin: 0 auto;
+        padding: 0 1.6rem;
+        justify-items: center;
+
+        @include mq() {
+            max-width: 103rem;
+        }
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        color: #4d2b1b;
+        text-align: center;
+        letter-spacing: .05rem;
+        padding-left: .3rem;
+        @include mq() {
+            font-size: 1.807rem;
+        }
+    }
+
+    &__logo {
+        width: 19.7rem;
+        height: 1.5rem;
+        margin-right: .4rem;
+        vertical-align: middle;
+
+        @include mq() {
+            width: 26.3rem;
+            height: 2rem;
+        }
+    }
+}
+
+.feature {
+    &--point1 {
+        margin-top: 2.1rem;
+        @include mq() {
+            padding-top: 2.5rem;
+        }
+    }
+
+    &--point2 {
+        margin-top: 3.1rem;
+        @include mq() {
+            padding-top: 1.8rem;
+        }
+    }
+
+    &--point3 {
+        margin-top: 2.9rem;
+        @include mq() {
+            padding-top: 2.1rem;
+        }
+    }
+
+        &__title {
+            width: 35rem;
+            background-color: #fa7da3;
+            color: #fff;
+            font-size: 1.8rem;
+            font-weight: 400;
+            border-top-left-radius: 1rem;
+            border-top-right-radius: 1rem;
+            text-align: center;
+            padding: 1.4rem 0;
+            line-height: 1;
+
+            @include mq() {
+                width: 78.02rem;
+                font-size: 2.8rem;
+                padding: 2.2rem 0 2.4rem 0;
+            }
+        }
+
+        &__content {
+            width: 35rem;
+            background-color: #fff;
+            font-size: 1.35rem;
+            border-bottom-left-radius: 1rem;
+            border-bottom-right-radius: 1rem;
+            border: 1px solid #fa7da3;
+            padding: 1.5rem 1.8rem 1.7rem 2rem;
+            font-weight: 600;
+
+            @include mq() {
+                width: 78.02rem;
+                padding: 2.1rem 3.9rem 3.6rem 4.1rem;
+                font-size: 2.1rem;
+                line-height: 1.613;
+            }
+
+            &--point2 {
+                padding: 1.5rem 1.2rem 1.7rem 1.2rem;
+                @include mq() {
+                    padding: 2.5rem 1.2rem 3.2rem 1.2rem;
+                }
+            }
+
+            &--point3 {
+                @include mq() {
+                    padding-top: 2.4rem;
+                    padding-bottom: 3rem;
+                }
+            }
+        }
+
+        &__description {
+
+            &--point2 {
+                padding: 0 .8rem;
+                letter-spacing: .05rem;
+
+                @include mq() {
+                    padding: 0 2.8rem;
+                    letter-spacing: 0;
+                }
+            }
+            &--point3 {
+                letter-spacing: .05rem;
+
+                @include mq() {
+                    letter-spacing: 0;
+                }
+            }
+        }
+
+        &__items {
+            justify-items: center;
+            margin-top: 2rem;
+        }
+
+        &__items--horizontal {
+            display: flex;
+            column-gap: 2.2rem;
+            margin-top: 1.3rem;
+            justify-content: center;
+
+            @include mq() {
+                column-gap: 4.1rem;
+                margin-top: 2.3rem;
+            }
+        }
+
+        &__item {
+
+            &--full-plan {
+                margin-top: 1.8rem;
+
+                @include mq() {
+                    margin-top: 1.8rem;
+                }
+            }
+
+            &--part-plan {
+                margin-top: 4.2rem;
+                
+                @include mq() {
+                    margin-top: 5.3rem;
+                }
+            }
+        }
+
+        &__salon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 14.3rem;
+            height: 8.5rem;
+
+            @include mq() {
+                width: 23.2rem;
+                height: 13.7rem;
+            }
+
+            &--ours {
+                border: 1px solid #fa7da3;
+            }
+
+            &--others {
+                border: 1px solid #333;
+                font-size: 2rem;
+                font-weight: 400;
+                @include mq() {
+                    font-size: 2.9rem;
+                }
+            }
+        }
+
+        &__salon-logo {
+            width: 7.1rem;
+            height: 3.9rem;
+            display: block;
+
+            @include mq() {
+                width: 11.6rem;
+                height: 6.4rem;
+            }
+        }
+
+        &__caption {
+            text-align: center;
+            font-size: 1.4rem;
+            margin-top: .4rem;
+
+            @include mq() {
+                font-size: 2.1rem;
+                margin-top: .8rem;
+            }
+
+            &--strong {
+                font-size: 2.3rem;
+                font-weight: 600;
+                margin-bottom: 2.4rem;
+                color: #4d2b1b;
+
+                @include mq() {
+                    font-size: 2.4rem;
+                    margin-bottom: 1.5rem;
+                }
+            }
+
+            &--pink {
+                font-size: 1.4rem;
+                font-weight: 600;
+                color: #fa7da3;
+                margin-top: .5rem;
+
+                @include mq() {
+                    font-size: 1.4rem;
+                    margin-top: .3rem;
+                }
+            }
+        }
+
+        &__plan-image--full {
+            width: 31.1rem;
+            height: 35.1rem;
+            margin-left: .3rem;
+
+            @include mq() {
+                width: 55.9rem;
+                height: 60.1rem;
+                margin-left: 2.7rem;
+            }
+        }
+
+        &__plan-image--part {
+            width: 10rem;
+        }
+
+        &__plan-parts {
+            display: flex;
+            flex-wrap: wrap;
+            column-gap: 1.2rem;
+            padding-top: .1rem;
+            row-gap: 1.6rem;
+
+            @include mq() {
+                margin-top: 2.2rem;
+            }
+        }
+
+        &__plan-part {
+            width: 10rem;
+        }
+
+        &__plan-image {
+            display: block;
+        }
+
+}
+
+/* コース */
+.courses {
+    padding: 1rem 0 2rem 0;
+    @include mq() {
+        padding: 0rem 0rem 6.1rem 0rem;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 103rem;
+        }
+    }
+
+    &__title {
+        font-size: 1.8rem;
+        text-align: center;
+        font-weight: 400;
+        padding-left: .5rem;
+
+        @include mq() {
+            font-size: 2.4rem;
+        }
+    }
+}
+
+.course {
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        row-gap: 3.2rem;
+        align-items: center;
+        margin-top: 2.3rem;
+
+        @include mq() {
+            flex-direction: row;
+            justify-content: center;
+            column-gap: 3.1rem;
+            margin-top: 3.7rem;
+        }
+    }
+
+    &__item {
+        width: 35rem;
+
+        @include mq() {
+
+        }
+    }
+
+    &__name {
+        background-color: #fdf0f5;
+        color: #fa7da3;
+        font-size: 1.8rem;
+        font-weight: 400;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        border: 1px solid #fa7da3;
+        border-bottom: none;
+        text-align: center;
+        padding: 1.2rem 0 1.4rem;
+        line-height: 1;
+
+        @include mq() {
+            font-size: 2.8rem;
+            padding: 1.6rem 0 1.4rem 0;
+        }
+    }
+
+    &__content {
+        background-color: #fff;
+        font-size: 1.4rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border: 1px solid #fa7da3;
+        border-top: none;
+        padding: 1.4rem 2.1rem 1.8rem 1.9rem;
+
+        @include mq() {
+            padding: .9rem 2rem 1.9rem 2rem;
+            font-size: 1.8rem;
+            line-height: 1.555;
+        }
+    }
+
+    &__description {
+        padding-left: .1rem;
+        line-break: anywhere;
+
+        @include mq() {
+            padding-left: .1rem;
+        }
+    }
+
+    &__image {
+        width: 31.1rem;
+        height: 20.8rem;
+        display: block;
+        margin-top: 1.2rem;
+
+        @include mq() {
+            width: 31.017rem;
+            height: 20.695rem;
+            margin-top: 1.3rem;
+        }
+    }
+
+}
+
+
+/* お客様の声 */
+.voices {
+    padding: 2.1rem 0 5.3rem 0;
+    background-color: #fdf0f5;
+    position: relative;
+
+    @include mq() {
+        padding: 2.7rem 0 8.5rem 0;
+    }
+
+    &__container {
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 103rem;
+        }
+    }
+
+    &__title {
+        text-align: center;
+
+        @include mq() {
+        }
+    }
+
+    &__carousel {
+        margin-top: 1.9rem;
+        @include mq() {
+            margin-top: 3.4rem;
+        }
+    }
+
+    &__card {
+        width: 31rem;
+        list-style: none;
+        padding-left: .2rem;
+
+        @include mq() {
+
+        }
+    }
+
+    &__course {
+        background-color: #fa7da3;
+        color: #fff;
+        font-size: 1.81rem;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        text-align: center;
+        padding: .8rem 0 .9rem;;
+
+        @include mq() {
+            font-size: 1.81rem;
+            padding: .8rem 0;
+        }
+    }
+
+    &__content {
+        display: flex;
+        column-gap: 1.6rem;
+        background-color: #fff;
+        font-size: 1.41rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border: 1px solid #fa7da3;
+        padding: 1.4rem 2rem .9rem 1.8rem;
+
+        @include mq() {
+            column-gap: 1.5rem;
+        }
+    }
+
+    &__photo-container {
+        min-width: 8.6rem;
+        text-align: center;
+    }
+
+    &__photo {
+        width: auto;
+        height: 11.4rem;
+    }
+
+    &__name {
+        font-size: 1.6rem;
+        color: #fa7da3;
+        padding-top: .2rem;
+        @include mq() {
+
+        }
+    }
+
+    &__comment {
+        font-size: 1.4rem;
+        padding-top: .5rem;
+
+        @include mq() {
+
+        }
+    }
+}
+
+/* swiper */
+.swiper {
+    &-pagination {
+        margin-bottom: .1rem;
+
+        @include mq() {
+            display: none;
+        }
+    }
+    
+    &-pagination-bullet {
+        width: 1.5rem;
+        height: 1.5rem;
+        background-color: #ffd2d4;
+        margin: .7rem !important;
+        &-active {
+            background-color: #fa7da3;
+        }
+    }
+}    
+
+/* フッター */
+.footer {
+    padding: 1.4rem 0 1.5rem 0;
+    background-color: #fa7da3;
+
+    @include mq() {
+        padding: 2.7rem 0 2.2rem 0;
+    }
+
+    &__container {
+        text-align: center;
+        margin: 0 auto;
+
+        @include mq() {
+            max-width: 103rem;
+        }
+    }
+
+    &__logo {
+        width: 7.3rem;
+        height: 3.9rem;
+
+        @include mq() {
+            width: 14.5rem;
+            height: 7.9rem;
+        }
+    }
+}
