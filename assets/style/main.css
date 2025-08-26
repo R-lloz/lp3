@@ -36,12 +36,12 @@ a:hover {
   font-size: 1.2rem;
   border-radius: 2rem;
   text-decoration: none;
-  padding: 0.6rem 1rem 0.6rem 1.1rem;
+  padding: 0.6rem 0.9rem 0.6rem 1.2rem;
   letter-spacing: 0.03rem;
 }
 @media screen and (min-width: 768px) {
   .link-button {
-    padding: 0.9rem 1.8rem 0.9rem 2rem;
+    padding: 0.9rem 1.8rem 1.1rem 2rem;
     font-size: 2.112rem;
     border-radius: 3rem;
     letter-spacing: 0;
@@ -238,7 +238,8 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0.9rem 0.7rem 1.2rem;
+  padding: 1rem 0 0 0.2rem;
+  max-width: 37rem;
 }
 @media screen and (min-width: 768px) {
   .header__container {
@@ -291,7 +292,7 @@ a:hover {
   margin: 0 0 0 0.4rem;
   background-image: url("/assets/image/img_cover_sp.png");
   background-position: bottom left;
-  background-size: auto 21.3rem;
+  background-size: auto 22.5rem;
   background-repeat: no-repeat;
 }
 @media screen and (min-width: 768px) {
@@ -933,14 +934,14 @@ a:hover {
 .feature__plan-parts {
   display: flex;
   flex-wrap: wrap;
-  -moz-column-gap: 1.2rem;
-       column-gap: 1.2rem;
-  padding-top: 0.1rem;
-  row-gap: 1.6rem;
+  padding-top: 0.2rem;
+  row-gap: 1.7rem;
+  justify-content: space-between;
 }
 @media screen and (min-width: 768px) {
   .feature__plan-parts {
     margin-top: 2.2rem;
+    width: 66rem;
   }
 }
 .feature__plan-part {
