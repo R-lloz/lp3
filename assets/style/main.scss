@@ -51,16 +51,16 @@ a:hover {
 .link-button {
     color: #fff;
     font-size: 1.2rem;
-    border-radius: 2rem;
+    border-radius: 3rem;
     text-decoration: none;
-    padding: .6rem .9rem .6rem 1.2rem;
+    padding: .6rem .9rem .7rem 1.2rem;
     letter-spacing: .03rem;
 
     @include mq() {
-        padding: .9rem 1.8rem 1.1rem 2rem;
+        padding: .9rem 1.8rem 1.1rem 2.4rem;
         font-size: 2.112rem;
         border-radius: 3rem;
-        letter-spacing: 0;
+        letter-spacing: -.05rem;
     }
 
     &::after {
@@ -90,12 +90,19 @@ a:hover {
 
     &--pink {
         background-color: #fa7da3;
+        padding: .6rem .8rem .7rem 1.1rem;
         &:hover {
             background-color: #ff94b8;
             opacity: 1;
         }
+        &::after {
+            @include mq() {
+                margin-left: 1rem;
+            }
+        }
         @include mq() {
-            padding-left: 2.7rem;
+            padding: .9rem 1.7rem 1.1rem 2.5rem;
+            letter-spacing: 0;
         }
     }
 
@@ -117,14 +124,14 @@ a:hover {
         border-radius: 5rem;
         letter-spacing: .2rem;
         line-height: 1.35;
-        padding: 1.1rem .1rem 1.2rem 0;
+        padding: 1.1rem 6.2rem 1.2rem 6rem;
 
         @include mq() {
             font-size: 3.4rem;
-            width: 57.058rem;
-            border-radius: 6rem;
-            padding: 1.7rem 1rem 2rem 1rem;
-            letter-spacing: .3rem;
+            width: 57rem;
+            border-radius: 8rem;
+            padding: 1.7rem 11rem 2rem 11.1rem;
+            letter-spacing: .35rem;
         }
 
         &::after {
@@ -193,21 +200,23 @@ a:hover {
     }
 
     &--course {
-        margin-top: .5rem;
+        margin-top: .4rem;
+        letter-spacing: 0;
+        padding-right: .1rem;
 
         &::before {
-            margin-right: .7rem;
+            margin-right: 1rem;
             margin-left: .5rem;
 
             @include mq() {
-                margin-right: 1.5rem;
+                margin-right: 1.1rem;
                 margin-left: .5rem;
             }
         }
 
         &::after {
             margin-right: .8rem;
-            margin-left: .4rem;
+            margin-left: .7rem;
 
             @include mq() {
                 margin-right: .8rem;
@@ -326,7 +335,7 @@ a:hover {
         font-size: 2.4rem;
         line-height: 1;
         font-weight: 700;
-        box-shadow: 3px 3px 5px rgba(0, 0, 0, .3);
+        box-shadow: 5px 5px 0px rgba(0, 0, 0, .075);
 
         @include mq() {
             width: 42.3rem;
@@ -335,7 +344,7 @@ a:hover {
             margin-right: 2.9rem;
         }
 
-        &_image {
+        &-image {
             position: absolute;
             height: 6.7rem;
             width: 16.6rem;
@@ -359,7 +368,7 @@ a:hover {
             }
         }
 
-        &--bg_white {
+        &--bg-white {
             display: block;
             background-color: #fff;
             padding: .5rem .4rem .5rem .3rem;
@@ -420,7 +429,7 @@ a:hover {
         }
     }
 
-    &__info_list {
+    &__info-list {
         margin-top: 2.1rem;
         margin-right: 2.6rem;
 
@@ -430,7 +439,7 @@ a:hover {
         }
     }
 
-    &__info_item {
+    &__info-item {
         width: 13.3rem;
         height: 3.5rem;
         font-size: 1.8rem;
@@ -475,10 +484,20 @@ a:hover {
         color: #fa7da3;
         position: relative;
         width: fit-content;
+        margin-left: 1rem;
 
         @include mq() {
             font-size: 3.7rem;
-            letter-spacing: .2rem;
+            font-size: 3.7rem;
+            letter-spacing: -.3rem;
+            margin-left: 1.2rem;
+        }
+
+        &--kerning {
+            margin-left: -.6rem;
+            @include mq() {
+                margin-left: 0;
+            }
         }
 
         &::before,
@@ -504,15 +523,21 @@ a:hover {
         }
 
         &::after {
-            right: -3rem;
+            right: -2rem;
             transform: rotate(-60deg);
             @include mq() {
-                right: -4.3rem;
+                right: -3.3rem;
             }
         }
     }
 
     &__content {
+        margin-left: .1rem;
+
+        @include mq() {
+            margin-left: 0;
+        }
+
         &--top {
             width: 35rem;
             background-color: #fa7da3;
@@ -566,6 +591,7 @@ a:hover {
         @include mq() {
             font-size: 1.4rem;
             margin-top: 1.4rem;
+            margin-right: .1rem;
         }
     }
 
@@ -619,7 +645,8 @@ a:hover {
         @include mq() {
             font-size: 3.4rem;
             margin-bottom: 1.3rem;
-            letter-spacing: .3rem;
+            letter-spacing: .35rem;
+            margin-left: .5rem;
         }
     }
 }
@@ -668,6 +695,7 @@ a:hover {
         @include mq() {
             font-size: 2.284rem;
             letter-spacing: -.02rem;
+            margin-bottom: .4rem;
         }
 
         &--small {
@@ -687,7 +715,7 @@ a:hover {
     background-color: #fdf0f5;
 
     @include mq() {
-        padding: 4.9rem 0 6.1rem 0;
+        padding: 4.7rem 0 6.1rem 0;
     }
 
     &__container {
@@ -700,7 +728,7 @@ a:hover {
         }
     }
 
-    &__title {
+    &__title-top {
         font-size: 1.8rem;
         color: #4d2b1b;
         text-align: center;
@@ -722,245 +750,278 @@ a:hover {
             height: 2rem;
         }
     }
-}
 
-.feature {
-    &--point1 {
+    &__point {
+        margin-left: .1rem;
+        @include mq() {
+            margin-left: 0;
+        }
+
+        &--1 {
+            margin-top: 2.2rem;
+            @include mq() {
+                padding-top: 2.5rem;
+            }
+        }
+
+        &--2 {
+            margin-top: 3.1rem;
+            @include mq() {
+                padding-top: 1.8rem;
+            }
+        }
+
+        &--3 {
+            margin-top: 2.9rem;
+            @include mq() {
+                padding-top: 2rem;
+            }
+        }
+    }
+
+
+    &__title {
+        width: 35rem;
+        background-color: #fa7da3;
+        color: #fff;
+        font-size: 1.8rem;
+        font-weight: 400;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        text-align: center;
+        padding: 1.4rem 0 1.3rem;
+        line-height: 1;
+
+        @include mq() {
+            width: 78.02rem;
+            font-size: 2.8rem;
+            padding: 2.4rem 0 2.1rem 0;
+        }
+
+        &--2 {
+            @include mq() {
+                padding: 2.1rem 0 2.4rem 0;
+            }
+        }
+
+        &--3 {
+            @include mq() {
+                padding: 2.2rem 0 2.2rem .3rem;
+            }
+        }
+    }
+
+    &__content {
+        width: 35rem;
+        background-color: #fff;
+        font-size: 1.35rem;
+        border-bottom-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+        border: 1px solid #fa7da3;
+        padding: 1.4rem 1.8rem 1.7rem 2rem;
+        font-weight: 600;
+
+        @include mq() {
+            width: 78.02rem;
+            padding: 2.2rem 3.9rem 3.6rem 4.1rem;
+            font-size: 2.1rem;
+            line-height: 1.613;
+        }
+
+        &--point2 {
+            padding: 1.4rem 1.2rem 1.7rem 1.2rem;
+            @include mq() {
+                padding: 2.3rem 1.2rem 3.2rem 1.2rem;
+            }
+        }
+
+        &--point3 {
+            @include mq() {
+                padding-top: 2.4rem;
+                padding-bottom: 2.8rem;
+            }
+        }
+    }
+
+    &__description {
+        margin-top: .1rem;
+        letter-spacing: 0;
+
+        @include mq() {
+            margin-top: .1rem;
+            letter-spacing: .016rem;
+        }
+
+        &--point2 {
+            padding: 0 .8rem;
+            letter-spacing: .05rem;
+
+            @include mq() {
+                padding: 0 2.8rem;
+                letter-spacing: .01rem;
+            }
+        }
+        &--point3 {
+            letter-spacing: .05rem;
+            padding-bottom: .1rem;
+            padding-top: .1rem;
+
+            @include mq() {
+                letter-spacing: 0;
+                padding-bottom: 0;
+            }
+        }
+    }
+
+    &__items {
+        justify-items: center;
         margin-top: 2.1rem;
+    }
+
+    &__items--horizontal {
+        display: flex;
+        column-gap: 2.2rem;
+        margin-top: 1.3rem;
+        justify-content: center;
+        margin-right: .2rem;
+
         @include mq() {
-            padding-top: 2.5rem;
+            column-gap: 4.1rem;
+            margin-top: 2.3rem;
+            margin-right: 0;
         }
     }
 
-    &--point2 {
-        margin-top: 3.1rem;
-        @include mq() {
-            padding-top: 1.8rem;
-        }
-    }
+    &__item {
 
-    &--point3 {
-        margin-top: 2.9rem;
-        @include mq() {
-            padding-top: 2.1rem;
-        }
-    }
-
-        &__title {
-            width: 35rem;
-            background-color: #fa7da3;
-            color: #fff;
-            font-size: 1.8rem;
-            font-weight: 400;
-            border-top-left-radius: 1rem;
-            border-top-right-radius: 1rem;
-            text-align: center;
-            padding: 1.4rem 0;
-            line-height: 1;
+        &--full-plan {
+            margin-top: 1.8rem;
 
             @include mq() {
-                width: 78.02rem;
-                font-size: 2.8rem;
-                padding: 2.2rem 0 2.4rem 0;
-            }
-        }
-
-        &__content {
-            width: 35rem;
-            background-color: #fff;
-            font-size: 1.35rem;
-            border-bottom-left-radius: 1rem;
-            border-bottom-right-radius: 1rem;
-            border: 1px solid #fa7da3;
-            padding: 1.5rem 1.8rem 1.7rem 2rem;
-            font-weight: 600;
-
-            @include mq() {
-                width: 78.02rem;
-                padding: 2.1rem 3.9rem 3.6rem 4.1rem;
-                font-size: 2.1rem;
-                line-height: 1.613;
-            }
-
-            &--point2 {
-                padding: 1.5rem 1.2rem 1.7rem 1.2rem;
-                @include mq() {
-                    padding: 2.5rem 1.2rem 3.2rem 1.2rem;
-                }
-            }
-
-            &--point3 {
-                @include mq() {
-                    padding-top: 2.4rem;
-                    padding-bottom: 3rem;
-                }
-            }
-        }
-
-        &__description {
-
-            &--point2 {
-                padding: 0 .8rem;
-                letter-spacing: .05rem;
-
-                @include mq() {
-                    padding: 0 2.8rem;
-                    letter-spacing: 0;
-                }
-            }
-            &--point3 {
-                letter-spacing: .05rem;
-
-                @include mq() {
-                    letter-spacing: 0;
-                }
-            }
-        }
-
-        &__items {
-            justify-items: center;
-            margin-top: 2rem;
-        }
-
-        &__items--horizontal {
-            display: flex;
-            column-gap: 2.2rem;
-            margin-top: 1.3rem;
-            justify-content: center;
-
-            @include mq() {
-                column-gap: 4.1rem;
-                margin-top: 2.3rem;
-            }
-        }
-
-        &__item {
-
-            &--full-plan {
                 margin-top: 1.8rem;
-
-                @include mq() {
-                    margin-top: 1.8rem;
-                }
-            }
-
-            &--part-plan {
-                margin-top: 4.2rem;
-                
-                @include mq() {
-                    margin-top: 5.3rem;
-                }
             }
         }
 
-        &__salon {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 14.3rem;
-            height: 8.5rem;
+        &--part-plan {
+            margin-top: 4.2rem;
+            
+            @include mq() {
+                margin-top: 5.3rem;
+            }
+        }
+    }
+
+    &__salon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 14.3rem;
+        height: 8.5rem;
+
+        @include mq() {
+            width: 23.2rem;
+            height: 13.7rem;
+        }
+
+        &--ours {
+            border: 1px solid #fa7da3;
+        }
+
+        &--others {
+            border: 1px solid #333;
+            font-size: 2rem;
+            font-weight: 400;
+            @include mq() {
+                font-size: 2.9rem;
+            }
+        }
+    }
+
+    &__salon-logo {
+        width: 7.1rem;
+        height: 3.9rem;
+        display: block;
+        margin-left: .3rem;
+
+        @include mq() {
+            width: 11.6rem;
+            height: 6.4rem;
+            margin-left: .5rem;
+        }
+    }
+
+    &__caption {
+        text-align: center;
+        font-size: 1.4rem;
+        margin-top: .5rem;
+
+        @include mq() {
+            font-size: 2.1rem;
+            margin-top: .7rem;
+        }
+
+        &--strong {
+            font-size: 2.3rem;
+            font-weight: 600;
+            margin-bottom: 2.4rem;
+            color: #4d2b1b;
 
             @include mq() {
-                width: 23.2rem;
-                height: 13.7rem;
-            }
-
-            &--ours {
-                border: 1px solid #fa7da3;
-            }
-
-            &--others {
-                border: 1px solid #333;
-                font-size: 2rem;
-                font-weight: 400;
-                @include mq() {
-                    font-size: 2.9rem;
-                }
+                font-size: 2.4rem;
+                margin-bottom: 1.5rem;
             }
         }
 
-        &__salon-logo {
-            width: 7.1rem;
-            height: 3.9rem;
-            display: block;
-
-            @include mq() {
-                width: 11.6rem;
-                height: 6.4rem;
-            }
-        }
-
-        &__caption {
-            text-align: center;
+        &--pink {
             font-size: 1.4rem;
+            font-weight: 600;
+            color: #fa7da3;
             margin-top: .4rem;
 
             @include mq() {
-                font-size: 2.1rem;
-                margin-top: .8rem;
-            }
-
-            &--strong {
-                font-size: 2.3rem;
-                font-weight: 600;
-                margin-bottom: 2.4rem;
-                color: #4d2b1b;
-
-                @include mq() {
-                    font-size: 2.4rem;
-                    margin-bottom: 1.5rem;
-                }
-            }
-
-            &--pink {
                 font-size: 1.4rem;
-                font-weight: 600;
-                color: #fa7da3;
-                margin-top: .5rem;
-
-                @include mq() {
-                    font-size: 1.4rem;
-                    margin-top: .3rem;
-                }
+                margin-top: .3rem;
             }
         }
+    }
 
-        &__plan-image--full {
-            width: 31.1rem;
-            height: 35.1rem;
-            margin-left: .3rem;
+    &__plan-image--full {
+        width: 31.1rem;
+        height: 35.1rem;
+        margin-left: .3rem;
 
-            @include mq() {
-                width: 55.9rem;
-                height: 60.1rem;
-                margin-left: 2.7rem;
-            }
+        @include mq() {
+            width: 55.9rem;
+            height: 60.1rem;
+            margin-left: 2.9rem;
         }
+    }
 
-        &__plan-image--part {
-            width: 10rem;
+    &__plan-image--part {
+        width: 10rem;
+    }
+
+    &__plan-parts {
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: .2rem;
+        row-gap: 1.8rem;
+        justify-content: space-between;
+
+        @include mq() {
+            margin-top: 2.4rem;
+            width: 66rem;
         }
+    }
 
-        &__plan-parts {
-            display: flex;
-            flex-wrap: wrap;
-            padding-top: .2rem;
-            row-gap: 1.7rem;
-            justify-content: space-between;
+    &__plan-part {
+        width: 10rem;
+        list-style: none;
+    }
 
-            @include mq() {
-                margin-top: 2.2rem;
-                width: 66rem;
-            }
-        }
-
-        &__plan-part {
-            width: 10rem;
-        }
-
-        &__plan-image {
-            display: block;
-        }
+    &__plan-image {
+        display: block;
+    }
 
 }
 
@@ -989,9 +1050,6 @@ a:hover {
             font-size: 2.4rem;
         }
     }
-}
-
-.course {
 
     &__list {
         display: flex;
@@ -999,18 +1057,20 @@ a:hover {
         row-gap: 3.2rem;
         align-items: center;
         margin-top: 2.3rem;
+        margin-left: .1rem;
 
         @include mq() {
             flex-direction: row;
             justify-content: center;
             column-gap: 3.1rem;
             margin-top: 3.7rem;
+            margin-left: 0;
         }
     }
 
     &__item {
         width: 35rem;
-
+        list-style-type: none;
         @include mq() {
 
         }
@@ -1033,6 +1093,13 @@ a:hover {
             font-size: 2.8rem;
             padding: 1.6rem 0 1.4rem 0;
         }
+
+        &--facial {
+            padding-right: .2rem;
+            @include mq() {
+                padding-right: 0;
+            }
+        }
     }
 
     &__content {
@@ -1042,7 +1109,7 @@ a:hover {
         border-bottom-right-radius: 1rem;
         border: 1px solid #fa7da3;
         border-top: none;
-        padding: 1.4rem 2.1rem 1.8rem 1.9rem;
+        padding: 1.4rem 1.8rem 1.8rem 1.9rem;
 
         @include mq() {
             padding: .9rem 2rem 1.9rem 2rem;
@@ -1054,9 +1121,11 @@ a:hover {
     &__description {
         padding-left: .1rem;
         line-break: anywhere;
+        letter-spacing: .01rem;
 
         @include mq() {
             padding-left: .1rem;
+            letter-spacing: 0;
         }
     }
 
@@ -1078,12 +1147,12 @@ a:hover {
 
 /* お客様の声 */
 .voices {
-    padding: 2.1rem 0 5.3rem 0;
+    padding: 2.1rem 0 5.4rem 0;
     background-color: #fdf0f5;
     position: relative;
 
     @include mq() {
-        padding: 2.7rem 0 8.5rem 0;
+        padding: 2.7rem 0 8.4rem 0;
     }
 
     &__container {
@@ -1125,11 +1194,11 @@ a:hover {
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
         text-align: center;
-        padding: .8rem 0 .9rem;;
+        padding: .8rem 0 .9rem;
 
         @include mq() {
             font-size: 1.81rem;
-            padding: .8rem 0;
+            padding: .8rem 0 .9rem;
         }
     }
 
@@ -1191,12 +1260,17 @@ a:hover {
         width: 1.5rem;
         height: 1.5rem;
         background-color: #ffd2d4;
-        margin: .7rem !important;
+        opacity: 1;
         &-active {
             background-color: #fa7da3;
         }
     }
-}    
+}   
+
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet, 
+.swiper-pagination-horizontal.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: .5rem .7rem;
+}
 
 /* フッター */
 .footer {
@@ -1219,10 +1293,12 @@ a:hover {
     &__logo {
         width: 7.3rem;
         height: 3.9rem;
+        margin-left: .1rem;
 
         @include mq() {
             width: 14.5rem;
             height: 7.9rem;
+            margin-left: .1rem;
         }
     }
 }
